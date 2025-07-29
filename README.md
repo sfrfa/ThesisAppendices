@@ -22,7 +22,8 @@ For each year and month in the designated time frame, queries were executed sepa
 
 For higher-density regions or periods, municipality-level filters were applied to reduce the number of results per query.
 
-## File02_VerifyFilesWithMoreThan500Rows.py and File03_DailyDownloadScript.py
+## File02_VerifyFilesWithMoreThan500Rows.py
+## File03_DailyDownloadScript.py
 If the number of results still exceeded the maximum allowable threshold of 500, the searches were further broken by day, effectively limiting each query to 24-hour periods.
 
 ## File04_VerifyMissingData.py
@@ -31,12 +32,16 @@ Once the initial download was completed, a verification script checked for missi
 ## File05_VerifyEmptyFiles.py
 Another script then scanned the dataset for empty files and identified those that contained only column headers without any contract records.
 
-## File06_FixCSVFormatting.py, File11_FixCSVFilesPerMonth.py and File12_AggregateFilesPerTipo.py
+## File06_FixCSVFormatting.py
+## File11_FixCSVFilesPerMonth.py
+## File12_AggregateFilesPerTipo.py
 One of the first issues encountered was inconsistency in the formatting of the raw CSV files, they were delimited by semicolons which is a common regional variant. 
 
 Additionally, a subset of the files contained encoding errors, malformed characters, or partial rows, often due to variations in encoding between UTF-8 and Latin-1. To address these problems, a dedicated Python script was developed.
 
-## File07_OrganizeFixedFiles.py, File08_OrganizeFixedFilesByMonth.py and File09_CreateFinalFilesPerMonth.py
+## File07_OrganizeFixedFiles.py
+## File08_OrganizeFixedFilesByMonth.py
+## File09_CreateFinalFilesPerMonth.py
 The script processed files stored in a designated source folder and saved the corrected versions in a separate output directory. 
 
 Logging was implemented to track each operation, capturing both successful files and files that raised decoding expressions. 
@@ -79,7 +84,7 @@ However, an important peculiarity of the portal’s behavior became apparent: re
 To resolve this overlap and ensure temporal accuracy, a post-processing script was implemented that filtered each file to retain only those records whose contract date strictly belonged to the intended year. 
 
 ## File19_JupyterLab_CPV_study.ipynb
-Appendix T
+Of the 30 434 CPV codes analyzed, 222 were selected. From the 222 selected cases, regardless of the type of contract (e.g., service acquisition, public service concessions, others), there are 112 distinct final CPVs. The Jupyter Lab code and the final complete list of selected codes can be consulted here.
 
 ## File20_JupyterLab_DataCleaning.ipynb
 During the cleaning stage, features with generic object data type were converted to more appropriate types such as datetime for date fields and float for monetary values, improving consistency and enabling more efficient downstream processing. 
