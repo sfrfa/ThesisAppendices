@@ -110,4 +110,16 @@ There are also other factors that may influence these behaviours, provided by th
 >
 > The 11 codes present solely in the manual list were retained, as they refer to specific medical practices not included in the dictionary, such as homeopathy, urology, or medical imaging. 
 >
-> The 4240 codes identified exclusively through the dictionary search mostly relate to procedures involving public health entities but not directly linked to healthcare provision – for example, facility maintenance or furniture acquisition. 
+> The 4240 codes identified exclusively through the dictionary search mostly relate to procedures involving public health entities but not directly linked to healthcare provision – for example, facility maintenance or furniture acquisition.
+
+## File22_ContractFilteringAndStudyByCPV79.ipynb
+> From the original dataset, only contracts related to the acquisition of medical and nursing services are filtered and analyzed.
+> 
+> The analysis includes: null and empty value counts, maximum and minimum values, heatmap, pairplot, outliers, number of medical and nursing service contracts, contract value by year of signing, and contract value by year of signing considering the execution period.
+>
+> Features analyzed: CPV code, contract object, contract type, procedure type, contracting authorities, contractors, year of contract signing, contractual price, base price of the procedure, total effective price, and execution period.
+>
+> Missing values are updated using information from the signed contract or other documents attached to the procedure, such as the specifications document.
+
+## File23_ProcurementComparison.ipynb
+> Analysis of the Relationship between Public Procurement and Public Sector Employment
